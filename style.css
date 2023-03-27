@@ -1,0 +1,28 @@
+.mogus{
+	background-image: url(red\ is\ sus.png);
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  background-image: url(https://static.pupperish.com/images/vjOMAcHNTJWq_7781_700.jpg); background-repeat: no-repeat; background-size: 100%, 100%;
+	text-align: center;
+}
+button{
+	color: greenyellow; background-color: black; font-family: courier; 
+  
+}
+#cg{
+		border-bottom: solid lawngreen 2px;
+	border-width}
+#sb{border-bottom: solid; border-color: blue; border-width: 2px}
+#tr{border-bottom: solid; border-color: red; border-width: 2px}
+button:hover{background-color: #616161;cursor: pointer; transition-duration: 0.4s} 
+body{color: cyan; font-family: system-ui;}
+button{
+  border-radius:12px; border-color: grey; box-shadow: 0 8px 16px 0 color(green), 0 6px 20px 0 color(green)}
+canvas{
+  border-radius:12px; border-color: gray; box-shadow: 10px, 10px;}
+p{
+	color: black;
+	font: bold;
+}dialog

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html style="text-align: center">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>CodePal</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<button onclick="bin()" style="height: 30px; width: 70px; font-size: 10pt; display: inline">Binary</button>
+<button onclick="place()" style="height: 30px; width: 70px; font-size: 5pt; display: inline"><b>Binary
+		Places</b></button>
+<button onclick="base2()" style="height: 30px; width: 70px; font-size: 10pt; display: inline">Base2</button>
+<button onclick="bruh()" style="height: 30px; width: 70px; font-size: 10pt; display: inline">bruh</button>
+<script src="script.js"></script>
+<audio src="bruh.mp3"></audio>
+<br>
+<button id="plus" OnClick="plus()" style="height: 30px; width: 70px; font-size: 10pt; display: inline">+</button>
+<button id="minus" OnClick="minus()" style="height: 30px; width: 70px; font-size: 10pt; display: inline">-</button>
+	<img src="red is sus.png" hidden="true" id="red">
+<button id="times" OnClick="times()" style="height: 30px; width: 70px; font-size: 10pt; display: inline">×</button>
+<button id="divide" OnClick="divide()" style="height: 30px; width: 70px; font-size: 10pt; display: inline">÷</button>
+<br>
+<button id="sin" OnClick="sin()" style="height: 30px; width: 70px; font-size: 10pt; display: inline">sin</button>
+
+<button id="cos" OnClick="cos()" style="height: 30px; width: 70px; font-size: 10pt; display: inline">cos</button>
+
+<button id="tan" OnClick="tan()" style="height: 30px; width: 70px; font-size: 10pt; display: inline">tan</button>
+<button id="arcsin" OnClick="arcsin()"
+	style="height: 30px; width: 70px; font-size: 10pt; display: inline">arcsin</button><br>
+<button id="arccos" OnClick="arccos()"
+	style="height: 30px; width: 70px; font-size: 10pt; display: inline">arccos</button>
+<button id="arctan" OnClick="arctan()"
+	style="height: 30px; width: 70px; font-size: 10pt; display: inline">arctan</button>
+
+<button id="exponent" OnClick="exponent()"
+	style="height: 30px; width: 70px; font-size: 10pt; display: inline">x<sup><small
+			style="font-size: 10pt">y</small></sup></button>
+<button id="Squareroot" OnClick="squareroot()"
+	style="height: 30px; width: 70px; font-size: 10pt; display: inline">&radic;x</button> <br>
+<button id="root" OnClick="root()" style="height: 30px; width: 70px; font-size: 10pt"><sup
+		style="font-size: 10pt">y</sup>&radic;x</button>
+<button id="sec" OnClick="sec()" style="height: 30px; width: 70px; font-size: 10pt">sec</button>
+
+<button id="cosec" OnClick="cosec()" style="height: 30px; width: 70px; font-size: 10pt">cosec</button>
+<button id="amgus" onclick="amgus()" style="height: 30px; width: 70px; font-size: 10pt; display: inline;">amogus</button>
+<script src="script.js"></script>
+<audio src="amogus.mp3" id="sus"></audio>
+<button id="cot" OnClick="cot()" style="height: 30px; width: 70px; font-size: 10pt">cot</button>
+<br>
+<button id="factorial" OnClick="factorial()" style="height: 30px; width: 70px; font-size: 10pt">x!</button>
+<button id="code"
+OnClick="arduino()"
+style="height: 30px; width: 70px; font-size: 10pt">unlock code
+</button>
+<br>
+	<div id="graphstuff">
+		<canvas id="graph" height="500px" width="500px" style="background: white">
+	
+</canvas>
+	<p id="tr">Tan/Cot/Arctan: Red</p>
+	<p id="sb">Sin/Sec/Arcsin: Blue</p>
+	<p id="cg">Cos/Cosec/Arccos: Green</p>
+
+	</div>
+<script>
+			const red = document.getElementById('red');
+	const canvas = document.getElementById('graph');
+	const ctx = canvas.getContext('2d');
+	ctx.strokeStyle = "black";
+	ctx.moveTo(0, 250);
+	ctx.lineTo(500, 250);
+	ctx.moveTo(250, 0);
+	ctx.lineTo(250, 500);
+	ctx.stroke();
+	ctx.save();
+	var lines = 0;
+	function binary() {
+		var x = document.createElement('p');
+		var number = prompt("Choose a number");
+		var bin = (number >>> 0).toString(2);
+		alert(bin);
+	}
+	function amgus(){
+		document.getElementById('sus').play();
+ctx.drawImage(red, 0, 0, 500, 500);
+setTimeout(function (){
+	ctx.clearRect(0, 0, 500, 500);
+			ctx.strokeStyle = "black";
+	ctx.moveTo(0, 250);
+	ctx.lineTo(500, 250);
+	ctx.moveTo(250, 0);
+	ctx.lineTo(250, 500);
+	ctx.stroke();
+}, 5000);
+	
+	}
+	function sin() {
+		lines++;
+		var sine = Number(prompt("Type the number to sine"));
+		alert(Math.sin(sine));
+		ctx.beginPath();
+		ctx.strokeStyle = "blue";
+
+		for (var angle = 0; angle < canvas.width - 1; angle+= 5) {
+			var y = canvas.height / 2 - 200 * (Math.sin((sine * (Math.PI / 180)) * (angle)));
+			var x = 10 + angle;
+			ctx.lineTo(x, y);
+		}
+		ctx.stroke();
+	}
+
+	function cos() {
+		lines++;
+		var cos = Number(prompt("Type the number to cos"));
+		alert(Math.cos(cos));
+		ctx.beginPath();
+		ctx.strokeStyle = "green";
+
+		
+		for (var angle = 0; angle < canvas.width - 1; angle+= 5) {
+			var y = canvas.height / 2 - 200 * (Math.cos((cos * (Math.PI / 180)) * (angle)));
+			var x = 10 + angle;
+			ctx.lineTo(x, y);
+		}
+		ctx.stroke();
+	}
+
+	function tan() {
+		lines++;
+		var tan = Number(prompt("Type the number to apply a tangent to"));
+		alert(Math.tan(tan));
+		ctx.beginPath();
+		ctx.strokeStyle = "red";
+
+		
+		for (var angle = 0; angle < canvas.width - 1; angle+= 5) {
+			var y = canvas.height / 2 - 200 * (Math.tan((tan * (Math.PI / 180)) * (angle)));
+			var x = 10 + angle;
+			ctx.lineTo(x, y);
+		}
+		ctx.stroke();
+	}
+	function plus() {
+		var x = Number(prompt(""));
+		var y = Number(prompt("Type number 2"));
+		alert(x + y);
+	}
+	function base2() {
+		var numbase = prompt("Choose a number to convert");
+		var b2 = 2 ** numbase;
+		alert(b2);
+	}
+	function bin() {
+		var number = prompt("Choose a number");
+		var bin = (number >>> 0).toString(2);
+		alert(bin);
+	}
+	function newbin(num) {
+		var bin = (num >>> 0).toString(2);
+		alert(bin);
+	}
+	function base2() {
+		var numbase = prompt("Choose a number to convert");
+		var b2 = 2 ** numbase;
+		alert(b2);
+	}
+	function place() {
+		var number = prompt("Choose a number");
+		var places = 1;
+		for (var i = 2; i < number; i += i) {
+			places++;
+		}
+		alert("There are " + places + " places in binary for your number.");
+		var convert = confirm("Convert to binary?");
+		if (convert == true) newbin(number);
+	}
+	function bruh() {
+		var bruh = new Audio('bruh.mp3');
+		bruh.play();
+	}
+	function minus() {
+		var x = Number(prompt("Type Number 1"));
+		var y = Number(prompt("Type number 2"));
+		alert(x - y);
+	}
+
+	function times() {
+		var x = Number(prompt("Type Number 1"));
+		var y = Number(prompt("Type number 2"));
+		alert(x * y);
+	}
+
+	function divide() {
+		var x = Number(prompt("Type Number 1"));
+		var y = Number(prompt("Type number 2"));
+		if (y === 0) {
+			alert("Undefined")
+		}
+		alert(x / y);
+	}
+	function arcsin() {
+		var as = prompt("Type the number");
+		ctx.beginPath();
+		ctx.strokeStyle = "blue";
+		alert(Math.asin(as));
+		for (var angle = 0; angle < canvas.width - 1; angle+= 5) {
+			var y = canvas.height / 2 - 200 * (Math.asin((as * (Math.PI / 180)) * (angle)));
+			var x = 10 + angle;
+			ctx.lineTo(x, y);
+		}
+		ctx.stroke();
+	}
+	function arccos() {
+		var ac = prompt("Type the number");
+		alert(Math.acos(ac));
+		ctx.beginPath();
+		ctx.strokeStyle = "green";
+		for (var angle = 0; angle < canvas.width - 1; angle+= 5) {
+			var y = canvas.height / 2 - 200 * (Math.acos((ac * (Math.PI / 180)) * (angle)));
+			var x = 10 + angle;
+			ctx.lineTo(x, y);
+		}
+		ctx.stroke();
+	}
+	function arctan() {
+		var at = prompt("Type the Number");
+		alert(Math.atan(at));
+		ctx.beginPath();
+		ctx.strokeStyle = "red";
+		for (var angle = 0; angle < canvas.width - 1; angle+= 5) {
+			var y = canvas.height / 2 - 200 * (Math.atan((at * (Math.PI / 180)) * (angle)));
+			var x = 10 + angle;
+			ctx.lineTo(x, y);
+		}
+		ctx.stroke();
+	}
+	function exponent() {
+		var x = prompt("Type the number to raise the power of.");
+		var y = prompt("Type the exponent to raise the number to.");
+		alert(Math.pow(x, y));
+	}
+	function squareroot() {
+		var x = prompt("Type the square.");
+		alert(Math.sqrt(x));
+	}
+	function root() {
+		var x = prompt("Type the number");
+		var y = prompt("Type the root");
+		alert(Math.pow(x, 1 / y))
+	}
+	function sec() {
+		var sec = prompt("Type the number.");
+		alert(1/Math.sin(sec));
+			ctx.beginPath();
+		ctx.strokeStyle = "blue";
+		for (var angle = 0; angle < canvas.width - 1; angle+= 5) {
+			var y = canvas.height / 2 - 200 * (1/Math.sin((sec * (Math.PI / 180)) * (angle)));
+			var x = 10 + angle;
+			ctx.lineTo(x, y);
+		}
+		ctx.stroke();
+	}
+	function cosec() {
+		var csc = prompt("Type the number.");
+		alert(1/Math.cos(csc));
+			ctx.beginPath();
+		ctx.strokeStyle = "green";
+		for (var angle = 0; angle < canvas.width - 1; angle+= 5) {
+			var y = canvas.height / 2 - 200 * (1 / Math.cos((csc * (Math.PI / 180)) * (angle)));
+			var x = 10 + angle;
+			ctx.lineTo(x, y);
+		}
+		ctx.stroke();
+	}
+	function cot() {
+		var cot = prompt("Type the number.");
+			ctx.beginPath();
+		ctx.strokeStyle = "red";
+		alert(1/Math.tan(cot));
+		for (var angle = 0; angle < canvas.width - 1; angle+= 5) {
+			var y = canvas.height / 2 - 200 * (1/Math.tan((cot * (Math.PI / 180)) * (angle)));
+			var x = 10 + angle;
+			ctx.lineTo(x, y);
+		}
+		ctx.stroke();
+	}
+	function factorial() {
+		let number = prompt("Choose a number to apply the factorial to.");
+		let factorial = 1;
+		if (number < 0) {
+			alert("Undefined");
+		}
+		else if (number === 0) {
+			alert("1");
+		}
+		else {
+			for (let num = 2; num <= number; num++)
+				factorial = factorial * num;
+		}
+		alert(factorial);
+	}
+		function Save(){
+			var name = prompt("The Graph's Name?");
+		var image  = document.getElementById('graph').toDataURL('image/png', 1.0);
+		var a = document.createElement('a');
+		a.href = image;
+		a.download = name;
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+	}
+
+</script>
+<br>
+
+<button id="clear" style="height: 50px; width: 100px; font-size: 15pt" onclick="clear()">Clear Graph</button>
+	<button id="save" style="height: 50px; width: 100px; font-size: 15pt" onclick="Save()">Save Graph</button>
+	<br>
+<script src="script.js"></script>
+<script type="module">
+	document.getElementById('clear').onclick = () => {
+		for(var s = 0; s < lines; s++){		
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+		}
+		ctx.beginPath();
+		ctx.strokeStyle = "black";
+		ctx.moveTo(0, 250);
+		ctx.lineTo(500, 250);
+		ctx.moveTo(250, 0);
+		ctx.lineTo(250, 500);
+		ctx.stroke();
+	}
+</script>
+<script>
+	function arduino(){
+		window.open("http://localhost:3000");
+	}
+</script>
+<body>
+
+</body>
+
+
+</html>
